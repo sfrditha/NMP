@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Native"
         tools:targetApi="31">
         <activity
+            android:name=".whatWePlay"
+            android:exported="false" />
+        <activity
             android:name=".whatplay"
             android:exported="false" />
         <activity
@@ -23,9 +26,6 @@
             android:exported="false" />
         <activity
             android:name=".wwa"
-            android:exported="false" />
-        <activity
-            android:name=".whatWePlay"
             android:exported="false" />
         <activity
             android:name=".whatweplay"
