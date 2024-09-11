@@ -13,6 +13,24 @@
         android:theme="@style/Theme.Native"
         tools:targetApi="31">
         <activity
+            android:name=".whatplay"
+            android:exported="false" />
+        <activity
+            android:name=".weplay"
+            android:exported="false" />
+        <activity
+            android:name=".whatWePlayPage"
+            android:exported="false" />
+        <activity
+            android:name=".wwa"
+            android:exported="false" />
+        <activity
+            android:name=".whatWePlay"
+            android:exported="false" />
+        <activity
+            android:name=".whatweplay"
+            android:exported="false" />
+        <activity
             android:name=".schedule"
             android:exported="false" />
         <activity
