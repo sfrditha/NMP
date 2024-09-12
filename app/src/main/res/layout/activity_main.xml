@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/btn_game2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/home"
@@ -18,4 +18,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/imageview_btnplay" />
+
+    <ImageView
+        android:id="@+id/btn_whoweare"
+        android:layout_width="325dp"
+        android:layout_height="119dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.813"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/imageview_btnwhoweare" />
+
+    <ImageView
+        android:id="@+id/btn_ourSchedule"
+        android:layout_width="332dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="450dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/imageview_btnourschedule" />
 </androidx.constraintlayout.widget.ConstraintLayout>

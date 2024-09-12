@@ -5,4 +5,20 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".schedule"/>
+    android:background="@drawable/schedule"
+    tools:context=".schedule">
+
+    <ImageView
+        android:id="@+id/btn_notifyMe"
+        android:layout_width="121dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="640dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/imageview_notifyme" />
+</androidx.constraintlayout.widget.ConstraintLayout>
