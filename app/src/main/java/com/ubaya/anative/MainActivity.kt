@@ -24,6 +24,17 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent)
         }
 
+        val buttonWhoWeAre = findViewById<ImageView>(R.id.btn_whoweare)
+        buttonWhoWeAre.setOnClickListener{
+            val Intent = Intent(this,whoWeAre::class.java)
+            startActivity(Intent)
+        }
+
+        val buttonSchedule = findViewById<ImageView>(R.id.btn_ourSchedule)
+        buttonSchedule.setOnClickListener{
+            val Intent = Intent(this,schedule::class.java)
+            startActivity(Intent)
+        }
 
     }
 }
