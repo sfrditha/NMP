@@ -2,7 +2,7 @@ package com.ubaya.anative
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -18,19 +18,12 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        // Tombol About Us
-        val aboutUsButton = findViewById<Button>(R.id.btnAboutUs)
-        aboutUsButton.setOnClickListener {
-            val intent = Intent(this, aboutUs::class.java)
-            startActivity(intent)
+        val buttonPlay = findViewById<ImageView>(R.id.btn_play)
+        buttonPlay.setOnClickListener{
+            val Intent = Intent(this,whatWePlay::class.java)
+            startActivity(Intent)
         }
 
-        // Tombol Schedule E-Sport
-        val scheduleButton = findViewById<Button>(R.id.btnSchedule)
-        scheduleButton.setOnClickListener {
-            val intent = Intent(this, schedule::class.java)
-            startActivity(intent)
-        }
+
     }
 }
