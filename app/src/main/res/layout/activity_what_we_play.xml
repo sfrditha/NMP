@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/whatweplaylist"
+    android:background="@drawable/bg_whatweplaylist"
     tools:context=".whatWePlay">
 
     <ImageView
@@ -25,7 +25,7 @@
         android:id="@+id/btn_gamee2"
         android:layout_width="332dp"
         android:layout_height="142dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,13 +34,14 @@
 
     <ImageView
         android:id="@+id/btn_game3"
-        android:layout_width="318dp"
-        android:layout_height="138dp"
-        android:layout_marginTop="380dp"
+        android:layout_width="320dp"
+        android:layout_height="142dp"
+        android:layout_marginTop="385dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
+        app:layout_constraintVertical_bias="0.504"
         app:srcCompat="@drawable/imageview_btngame3" />
 </androidx.constraintlayout.widget.ConstraintLayout>

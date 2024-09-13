@@ -1,6 +1,8 @@
 package com.ubaya.anative
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -15,6 +17,12 @@ class schedule : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        val test = findViewById<ImageView>(R.id.btn_notifyMe)
+        test.setOnClickListener{
+            val Intent = Intent(this,whatWePlayDetail::class.java)
+            startActivity(Intent)
         }
     }
 }
