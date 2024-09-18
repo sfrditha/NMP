@@ -13,19 +13,19 @@
         android:theme="@style/Theme.Native"
         tools:targetApi="31">
         <activity
-            android:name=".scheduleDetail"
+            android:name=".Schedule"
             android:exported="false" />
         <activity
-            android:name=".schedule"
+            android:name=".ScheduleDetail"
             android:exported="false" />
         <activity
-            android:name=".whatWePlayDetail"
+            android:name=".WhatWePlayDetail"
             android:exported="false" />
         <activity
-            android:name=".whatWePlay"
+            android:name=".WhatWePlay"
             android:exported="false" />
         <activity
-            android:name=".whoWeAre"
+            android:name=".WhoWeAre"
             android:exported="false" />
         <activity
             android:name=".whatplay"
