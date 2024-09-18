@@ -7,6 +7,11 @@ android {
     namespace = "com.ubaya.anative"
     compileSdk = 34
 
+    buildFeatures {
+        //fitur yang memudahkan Anda mengakses tampilan dalam tata letak dari kode Anda.
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.ubaya.anative"
         minSdk = 24
