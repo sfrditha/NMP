@@ -8,6 +8,7 @@ import com.ubaya.anative.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding :ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -37,6 +38,8 @@ class MainActivity : AppCompatActivity() {
             val Intent = Intent(this,WhoWeAre::class.java)
             startActivity(Intent)
         }
+
+
 //        val buttonWhoWeAre = findViewById<ImageView>(R.id.btn_whoweare)
 //        buttonWhoWeAre.setOnClickListener{
 //            val Intent = Intent(this,whoWeAre::class.java)
