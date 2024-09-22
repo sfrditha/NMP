@@ -20,38 +20,20 @@ class MainActivity : AppCompatActivity() {
 //            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
 //            insets
 //        }
-        binding.btnPlay.setOnClickListener(){
-            val Intent = Intent(this,WhatWePlay::class.java)
-            startActivity(Intent)
-        }
-//        val buttonPlay = findViewById<ImageView>(R.id.btn_play)
-//        buttonPlay.setOnClickListener{
-//            val Intent = Intent(this,whatWePlay::class.java)
-//            startActivity(Intent)
-//        }
+//
         binding.btnOurSchedule.setOnClickListener(){
             val Intent = Intent(this, ScheduleDetail::class.java)
             startActivity(Intent)
         }
 
         binding.btnWhoweare.setOnClickListener(){
-            val Intent = Intent(this,WhoWeAre::class.java)
-            startActivity(Intent)
+            val klik = Intent(this, WhoWeAre::class.java)
+            startActivity(klik)
         }
 
-
-//        val buttonWhoWeAre = findViewById<ImageView>(R.id.btn_whoweare)
-//        buttonWhoWeAre.setOnClickListener{
-//            val Intent = Intent(this,whoWeAre::class.java)
-//            startActivity(Intent)
-//        }
-
-//        val buttonSchedule = findViewById<ImageView>(R.id.btn_ourSchedule)
-//        buttonSchedule.setOnClickListener{
-//            val Intent = Intent(this, ScheduleDetail::class.java)
-//            startActivity(Intent)
-//
-//        }
-
+        binding.btnPlay.setOnClickListener(){
+            val Intent = Intent(this, WhatWePlayList::class.java)
+            startActivity(Intent)
+        }
     }
 }

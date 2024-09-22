@@ -26,7 +26,6 @@ class WhoWeAre : AppCompatActivity() {
             Like()
             binding.txtLike.text = Jlike.toString()
         }
-
         enableEdgeToEdge()
 //        setContentView(R.layout.activity_who_we_are)
 //        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.btn_game2)) { v, insets ->

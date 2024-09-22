@@ -25,29 +25,27 @@
             android:name=".WhatWePlayDetail"
             android:exported="false" />
         <activity
-            android:name=".WhatWePlay"
-            android:exported="false" />
-        <activity
             android:name=".WhoWeAre"
             android:exported="false" />
-        <activity
-            android:name=".whatplay"
-            android:exported="false" />
-        <activity
-            android:name=".weplay"
-            android:exported="false" />
-        <activity
-            android:name=".whatWePlayPage"
-            android:exported="false" />
-        <activity
-            android:name=".wwa"
-            android:exported="false" />
-        <activity
-            android:name=".whatweplay"
-            android:exported="false" />
-        <activity
-            android:name=".aboutUs"
-            android:exported="false" />
+
+<!--        <activity-->
+<!--            android:name=".whatplay"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".weplay"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".whatWePlayPage"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".wwa"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".whatweplay"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".aboutUs"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".MainActivity"
             android:exported="true">
