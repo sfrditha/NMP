@@ -22,10 +22,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SEP"
-        android:textColor="@color/gray"
+        android:textColor="@color/material_dynamic_neutral20"
         android:textSize="12sp"
-        app:layout_constraintTop_toBottomOf="@id/tvDate"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDate" />
 
     <!-- Event Name -->
     <TextView
@@ -47,10 +47,10 @@
         android:id="@+id/tvTeam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:text="Valorant - Team A"
-        android:textColor="@color/gray"
-        app:layout_constraintTop_toBottomOf="@id/tvEventName"
-        app:layout_constraintStart_toEndOf="@id/tvMonth"
+        android:textColor="@color/material_dynamic_neutral20"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="16dp"/>
+        app:layout_constraintStart_toEndOf="@id/tvMonth"
+        app:layout_constraintTop_toBottomOf="@id/tvEventName" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,7 +9,8 @@ android {
 
     buildFeatures {
         //fitur yang memudahkan Anda mengakses tampilan dalam tata letak dari kode Anda.
-        viewBinding = true
+        viewBinding = true;
+
     }
 
     defaultConfig {

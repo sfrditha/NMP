@@ -37,14 +37,7 @@ class Schedule : AppCompatActivity() {
 
         //val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewSchedule)
 
-        // Sample data
-        val scheduleEvents = listOf(
-            ScheduleEvent("05", "SEP", "Regional Qualifier - Valorant", "Valorant - Team A"),
-            ScheduleEvent("10", "SEP", "League of Legends Workshop", "LOL - Team C"),
-            ScheduleEvent("07", "OCT", "Call of Duty Championship", "COD - Team A"),
-            ScheduleEvent("11", "NOV", "Dota 2 Livestream", "Dota 2 - Team B"),
-            ScheduleEvent("04", "DEC", "Fortnite Invitational", "Fortnite - Team A")
-        )
+
 
         // Set up the RecyclerView with the adapter and layout manager
 //        recyclerView.layoutManager = LinearLayoutManager(this)
