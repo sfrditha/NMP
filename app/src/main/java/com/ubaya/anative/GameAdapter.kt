@@ -18,6 +18,7 @@ class GameAdapter():RecyclerView.Adapter<GameAdapter.GameViewHolder>() {
     override fun getItemCount(): Int {
 //        return QuestionData.questions.size
         return GameData.gamesData.size
+        //tes
     }
 
     override fun onBindViewHolder(holder: GameViewHolder, position: Int) {
