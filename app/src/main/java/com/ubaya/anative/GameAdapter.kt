@@ -1,5 +1,6 @@
 package com.ubaya.anative
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -25,5 +26,12 @@ class GameAdapter():RecyclerView.Adapter<GameAdapter.GameViewHolder>() {
         holder.binding.txtTitle.text = GameData.gamesData[position].name
         holder.binding.txtDesc.text = GameData.gamesData[position].description
 
+        holder.binding.buttonAchievement.setOnClickListener{
+            val intent = Intent(holder.itemView.context, AchievementsActivity::class.java)
+            intent.putExtra("game_index", position)
+            holder.itemView.context.startActivity(intent)
+        }
+
     }
+
 }
