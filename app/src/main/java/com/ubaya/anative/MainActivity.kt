@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 //        }
 //
         binding.btnOurSchedule.setOnClickListener(){
-            val Intent = Intent(this, ScheduleDetail::class.java)
+            val Intent = Intent(this, ScheduleActivity::class.java)
             startActivity(Intent)
         }
 

@@ -16,14 +16,10 @@ class GameAdapter():RecyclerView.Adapter<GameAdapter.GameViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-//        return QuestionData.questions.size
         return GameData.gamesData.size
-        //tes
     }
 
     override fun onBindViewHolder(holder: GameViewHolder, position: Int) {
-//        holder.binding.imgQuestion.setImageResource(QuestionData.questions[position].imageId)
-//        holder.binding.txtQuestionTitle.text = QuestionData.questions[position].question
 
         holder.binding.imgGame.setImageResource(GameData.gamesData[position].imageId)
         holder.binding.txtTitle.text = GameData.gamesData[position].name
