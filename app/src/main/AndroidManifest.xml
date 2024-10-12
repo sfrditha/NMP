@@ -13,6 +13,15 @@
         android:theme="@style/Theme.Native"
         tools:targetApi="31">
         <activity
+            android:name=".DetailTeamList"
+            android:exported="false" />
+        <activity
+            android:name=".TeamList"
+            android:exported="false" />
+        <activity
+            android:name=".Teams"
+            android:exported="false" />
+        <activity
             android:name=".AchievementList"
             android:exported="false" />
         <activity
