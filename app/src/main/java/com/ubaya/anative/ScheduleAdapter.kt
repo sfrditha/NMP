@@ -1,5 +1,6 @@
 package com.ubaya.anative
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -17,9 +18,7 @@ class ScheduleAdapter():RecyclerView.Adapter<ScheduleAdapter.ScheduleViewHolder>
     }
 
     override fun getItemCount(): Int {
-//        return QuestionData.questions.size
         return ScheduleData.schedulesData.size
-        //tes
     }
 
     override fun onBindViewHolder(holder: ScheduleViewHolder, position: Int) {
@@ -28,6 +27,12 @@ class ScheduleAdapter():RecyclerView.Adapter<ScheduleAdapter.ScheduleViewHolder>
         holder.binding.txtGame.text = ScheduleData.schedulesData[position].game;
         holder.binding.txtTeam.text = ScheduleData.schedulesData[position].team;
         holder.binding.txtMonth.text = ScheduleData.schedulesData[position].month;
+
+        holder.binding.cardView.setOnClickListener(){
+            val intent = Intent(holder.itemView.context, ScheduleDetail::class.java)
+            intent.putExtra("schedule_index", position)
+            holder.itemView.context.startActivity(intent)
+        }
 
     }
 }

@@ -20,6 +20,11 @@ class ScheduleDetail : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityScheduleDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val index = intent.getIntExtra("schedule_index",0)
+        binding.title.text = ScheduleData.schedulesData[index].name;
+        binding.isi.text = ScheduleData.schedulesData[index].Desc
+        binding.loc.text = ScheduleData.schedulesData[index].location
+
         binding.btnNotifyMe.setOnClickListener(){
             if(klik==0){
                 klik=1
