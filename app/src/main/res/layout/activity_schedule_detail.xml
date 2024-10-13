@@ -55,16 +55,14 @@
         android:id="@+id/loc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="152dp"
-        android:layout_marginBottom="372dp"
-        android:fontFamily="sans-serif-medium"
+        android:layout_marginEnd="185dp"
         android:text="Pakuwon Mall - Surabaya"
         android:textColor="#FFFFFF"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title" />
+
 
     <TextView
         android:id="@+id/isi"

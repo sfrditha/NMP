@@ -19,45 +19,55 @@
 
     <Spinner
         android:id="@+id/spnYear"
-        android:layout_width="369dp"
-        android:layout_height="60dp"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
+        android:background="@drawable/spinner_border"
+        android:dropDownWidth="match_parent"
+        android:dropDownVerticalOffset="10dp"
+        android:padding="10dp"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgGame"
         tools:ignore="MissingConstraints" />
+
 
     <TextView
         android:id="@+id/txtTitleAch"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:text="Valorant Achievements"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtDescAch"
+        android:textColor="#721214"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spnYear"
-        app:layout_constraintVertical_bias="0.486" />
+        app:layout_constraintTop_toBottomOf="@+id/spnYear" />
 
     <TextView
         android:id="@+id/txtDescAch"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="25dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="260dp"
+        android:layout_marginBottom="228dp"
         android:text="1. Champions of the Regional Valorant Showdown (2023) - Team A\n2. Best Defensive Team Award (2024) - Team A\n3. MVP of the Season (2023) - Team B\n4. Flawless Victory at the Spring Valorant Cup (2022) - Team A\n5. Top 4 Finish in International Valorant Championship (2023) - Team C"
-        android:textColor="#000000"
+        android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleAch"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
