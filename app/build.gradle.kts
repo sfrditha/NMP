@@ -7,6 +7,7 @@ android {
     namespace = "com.ubaya.anative"
     compileSdk = 34
 
+    //binding
     buildFeatures {
         //fitur yang memudahkan Anda mengakses tampilan dalam tata letak dari kode Anda.
         viewBinding = true

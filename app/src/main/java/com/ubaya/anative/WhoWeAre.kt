@@ -9,6 +9,7 @@ class WhoWeAre : AppCompatActivity() {
 
     private lateinit var binding : ActivityWhoWeAreBinding;
     var Jlike = 0;
+
     fun Like() {
         if (Jlike >= 0) {
             Jlike += 1
