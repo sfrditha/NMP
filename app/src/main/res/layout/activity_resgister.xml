@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/bg">
+
+    <!-- Title Text -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Sign Up"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Linear Layout for Input Fields -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="24dp">
+
+        <!-- First Name Field -->
+        <EditText
+            android:id="@+id/firstNameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="enter your first name"
+            android:textColorHint="@color/white"
+            android:background="@drawable/corner"
+            android:padding="12dp"
+            android:minHeight="48dp"
+            android:layout_marginBottom="30dp"
+            android:textSize="16sp" />
+
+        <!-- Last Name Field -->
+        <EditText
+            android:id="@+id/lastNameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="enter your last name"
+            android:textColorHint="@color/white"
+            android:background="@drawable/corner"
+            android:padding="12dp"
+            android:minHeight="48dp"
+            android:layout_marginBottom="30dp"
+            android:textSize="16sp" />
+
+        <!-- Username Field -->
+        <EditText
+            android:id="@+id/usernameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="enter your username"
+            android:textColorHint="@color/white"
+            android:background="@drawable/corner"
+            android:padding="12dp"
+            android:minHeight="48dp"
+            android:layout_marginBottom="30dp"
+            android:textSize="16sp" />
+
+        <!-- Password Field -->
+        <EditText
+            android:id="@+id/passwordInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="enter a password"
+            android:textColorHint="@color/white"
+            android:background="@drawable/corner"
+            android:padding="12dp"
+            android:minHeight="48dp"
+            android:layout_marginBottom="30dp"
+            android:inputType="textPassword"
+            android:textSize="16sp" />
+
+        <!-- Repeat Password Field -->
+        <EditText
+            android:id="@+id/repeatPasswordInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="enter a password"
+            android:textColorHint="@color/white"
+            android:background="@drawable/corner"
+            android:padding="12dp"
+            android:minHeight="48dp"
+            android:layout_marginBottom="20dp"
+            android:inputType="textPassword"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- Terms and Conditions Checkbox -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="24dp">
+
+        <CheckBox
+            android:id="@+id/termsCheckbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/white"
+            android:layout_gravity="center_vertical" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I agree with terms and conditions"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <!-- Buttons Layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <!-- Back Button -->
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="@color/white"
+            android:text="Back"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:padding="12dp" />
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#721214"
+            android:text="Submit"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:padding="12dp" />
+    </LinearLayout>
+
+</LinearLayout>
