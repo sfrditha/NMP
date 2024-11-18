@@ -9,7 +9,7 @@
     tools:context=".WhoWeAre">
 
     <ImageView
-        android:id="@+id/wwaTitle"
+        android:id="@+id/wwaImage"
         android:layout_width="411dp"
         android:layout_height="278dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -60,7 +60,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.858"
+        app:layout_constraintHorizontal_bias="0.851"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView

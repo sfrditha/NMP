@@ -1,6 +1,7 @@
 package com.ubaya.anative
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.ubaya.anative.databinding.ActivityWhoWeAreBinding
@@ -10,11 +11,7 @@ class WhoWeAre : AppCompatActivity() {
     private lateinit var binding : ActivityWhoWeAreBinding;
     var Jlike = 0;
 
-    fun Like() {
-        if (Jlike >= 0) {
-            Jlike += 1
-        }
-    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +19,15 @@ class WhoWeAre : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.txtLike.text = "0";
+
+        fun Like() {
+            if (Jlike >= 0 && Jlike<=10) {
+                Jlike += 1
+            }
+            else{
+                binding.btnLike.visibility = View.INVISIBLE
+            }
+        }
 
         binding.btnLike.setOnClickListener {
             Like()

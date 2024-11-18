@@ -13,11 +13,19 @@
         android:theme="@style/Theme.Native"
         tools:targetApi="31">
         <activity
-            android:name=".Resgister"
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Register"
             android:exported="false" />
         <activity
             android:name=".Login"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".TeamActivity"
             android:exported="false" />
@@ -29,18 +37,18 @@
         <activity
             android:name=".DetailTeamList"
             android:exported="false" />
-        <activity
-            android:name=".TeamList"
-            android:exported="false" />
-        <activity
-            android:name=".Teams"
-            android:exported="false" />
-        <activity
-            android:name=".AchievementList"
-            android:exported="false" />
-        <activity
-            android:name=".AchievementDetail"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".TeamList"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".Teams"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".AchievementList"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".AchievementDetail"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".WhatWePlayList"
             android:exported="false" />
@@ -50,42 +58,18 @@
         <activity
             android:name=".ScheduleDetail"
             android:exported="false" />
-        <activity
-            android:name=".WhatWePlayDetail"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".WhatWePlayDetail"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".WhoWeAre"
-            android:exported="false" /> <!-- <activity -->
-        <!-- android:name=".whatplay" -->
-        <!-- android:exported="false" /> -->
-        <!-- <activity -->
-        <!-- android:name=".weplay" -->
-        <!-- android:exported="false" /> -->
-        <!-- <activity -->
-        <!-- android:name=".whatWePlayPage" -->
-        <!-- android:exported="false" /> -->
-        <!-- <activity -->
-        <!-- android:name=".wwa" -->
-        <!-- android:exported="false" /> -->
-        <!-- <activity -->
-        <!-- android:name=".whatweplay" -->
-        <!-- android:exported="false" /> -->
-        <!-- <activity -->
-        <!-- android:name=".aboutUs" -->
-        <!-- android:exported="false" /> -->
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
-
 </manifest>

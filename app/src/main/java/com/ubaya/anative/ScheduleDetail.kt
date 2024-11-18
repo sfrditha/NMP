@@ -25,6 +25,7 @@ class ScheduleDetail : AppCompatActivity() {
         binding.isi.text = ScheduleData.schedulesData[index].Desc
         binding.loc.text = ScheduleData.schedulesData[index].location
 
+
         binding.btnNotifyMe.setOnClickListener(){
             if(klik==0){
                 klik=1

@@ -7,33 +7,31 @@ import androidx.appcompat.app.AppCompatActivity
 import com.ubaya.anative.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding :ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        setContentView(R.layout.activity_main)
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.btn_game2)) { v, insets ->
-//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-//            insets
-//        }
-//
-        binding.btnOurSchedule.setOnClickListener(){
-            val Intent = Intent(this, ScheduleActivity::class.java)
-            startActivity(Intent)
+
+        binding.btnOurSchedule.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            intent.putExtra("home_index", 2)
+            startActivity(intent)
         }
 
-        binding.btnWhoweare.setOnClickListener(){
-            val klik = Intent(this, WhoWeAre::class.java)
-            startActivity(klik)
+        binding.btnWhoweare.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            intent.putExtra("home_index", 1)
+            startActivity(intent)
         }
 
-        binding.btnPlay.setOnClickListener(){
-            val Intent = Intent(this, WhatWePlayList::class.java)
-            startActivity(Intent)
+        binding.btnPlay.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            intent.putExtra("home_index", 0)
+            startActivity(intent)
         }
     }
 }

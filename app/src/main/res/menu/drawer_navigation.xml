@@ -17,9 +17,9 @@
     <item android:title="">
         <menu>
             <group android:checkableBehavior="single">
-                <item android:id="logout"
+                <item android:id="@+id/logout"
                     android:icon="@drawable/baseline_logout_24"
-                    android:title="Log Out"/>
+                    android:title="LogOut"/>
             </group>
         </menu>
     </item>
