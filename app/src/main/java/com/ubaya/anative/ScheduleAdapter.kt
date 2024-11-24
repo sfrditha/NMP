@@ -4,9 +4,10 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import com.ubaya.anative.databinding.ScheduleCardBinding
 
-class ScheduleAdapter():RecyclerView.Adapter<ScheduleAdapter.ScheduleViewHolder>() {
+class ScheduleAdapter(val schedules:ArrayList<Schedule>):RecyclerView.Adapter<ScheduleAdapter.ScheduleViewHolder>() {
     class ScheduleViewHolder(val binding: ScheduleCardBinding):
         RecyclerView.ViewHolder(binding.root){}
 
@@ -18,16 +19,17 @@ class ScheduleAdapter():RecyclerView.Adapter<ScheduleAdapter.ScheduleViewHolder>
     }
 
     override fun getItemCount(): Int {
-        return ScheduleData.schedulesData.size
+        return schedules.size
     }
 
     override fun onBindViewHolder(holder: ScheduleViewHolder, position: Int) {
-        holder.binding.txtEventName.text = ScheduleData.schedulesData[position].name;
-        holder.binding.txtDate.text = ScheduleData.schedulesData[position].date.toString();
-        holder.binding.txtGame.text = ScheduleData.schedulesData[position].game;
-        holder.binding.txtTeam.text = ScheduleData.schedulesData[position].team;
-        holder.binding.txtMonth.text = ScheduleData.schedulesData[position].month;
-
+        with(holder.binding) {
+            txtTeam.text = schedules[position].team
+            txtGame.text = schedules[position].game
+            txtDate.text = schedules[position].date
+            txtMonth.text = schedules[position].month
+            txtEventName.text = schedules[position].name
+        }
         holder.binding.cardView.setOnClickListener(){
             val intent = Intent(holder.itemView.context, ScheduleDetail::class.java)
             intent.putExtra("schedule_index", position)

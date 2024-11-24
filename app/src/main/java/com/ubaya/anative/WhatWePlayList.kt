@@ -21,9 +21,9 @@ class WhatWePlayList : AppCompatActivity() {
 //        binding.recQuestion.setHasFixedSize(true)
 //        binding.recQuestion.adapter = QuestionAdapter()
 
-        binding.recGame.layoutManager = LinearLayoutManager(this)
-        binding.recGame.setHasFixedSize(true)
-        binding.recGame.adapter = GameAdapter()
+//        binding.recGame.layoutManager = LinearLayoutManager(this)
+//        binding.recGame.setHasFixedSize(true)
+//        binding.recGame.adapter = GameAdapter()
 
 
 //        setContentView(R.layout.activity_what_we_play_list)

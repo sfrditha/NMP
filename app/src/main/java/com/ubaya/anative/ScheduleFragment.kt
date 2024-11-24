@@ -1,12 +1,19 @@
 package com.ubaya.anative
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.android.volley.Request
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.ubaya.anative.databinding.FragmentScheduleBinding
+import org.json.JSONObject
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -32,6 +39,26 @@ class ScheduleFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+        val q = Volley.newRequestQueue(activity)
+        val url = "https://ubaya.xyz/native/160722042/get_schedule.php"
+        var stringRequest = StringRequest(
+            Request.Method.POST, url,
+            {
+                Log.d("apiresult", it)
+                val obj = JSONObject(it)
+                if(obj.getString("result") == "OK") {
+                    val data = obj.getJSONArray("data")
+                    val sType = object : TypeToken<List<Schedule>>() { }.type
+                    schedules = Gson().fromJson(data.toString(), sType) as
+                            ArrayList<Schedule>
+                }
+                updateList()
+                Log.d("apiresult", schedules.toString())
+            },
+            {
+                Log.e("apiresult", it.message.toString())
+            })
+        q.add(stringRequest)
     }
 
     override fun onCreateView(
@@ -39,15 +66,16 @@ class ScheduleFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentScheduleBinding.inflate(inflater, container, false)
-
+        return binding.root
+    }
+    private fun updateList(){
         //RecyclerView
         val layoutManager = LinearLayoutManager(activity)
         with(binding.recSchedule) {
             this.layoutManager = layoutManager
             setHasFixedSize(true)
-            adapter = ScheduleAdapter()
+            adapter = ScheduleAdapter(schedules)
         }
-        return binding.root
     }
 
     companion object {

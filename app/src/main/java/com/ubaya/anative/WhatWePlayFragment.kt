@@ -1,13 +1,21 @@
 package com.ubaya.anative
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.ubaya.anative.databinding.FragmentScheduleBinding
 import com.ubaya.anative.databinding.FragmentWhatWePlayBinding
+import org.json.JSONObject
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,6 +33,7 @@ class WhatWePlayFragment : Fragment() {
     private var param2: String? = null
 
     var games:ArrayList<Game> = ArrayList()
+    val achievementsList: MutableList<Achievements> = mutableListOf()
     private lateinit var binding: FragmentWhatWePlayBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +42,28 @@ class WhatWePlayFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+        val q = Volley.newRequestQueue(activity)
+        val url = "https://ubaya.xyz/native/160722042/get_game.php"
+        var stringRequest = StringRequest(
+            Request.Method.POST, url,
+            {
+                Log.d("apiresult", it)
+                val obj = JSONObject(it)
+                if(obj.getString("result") == "OK") {
+                    val data = obj.getJSONArray("data")
+                    val sType = object : TypeToken<List<Game>>() { }.type
+                    games = Gson().fromJson(data.toString(), sType) as
+                            ArrayList<Game>
+                }
+                updateList()
+                Log.d("apiresult", games.toString())
+            },
+            {
+                Log.e("apiresult", it.message.toString())
+            })
+        q.add(stringRequest)
+
+
     }
 
     override fun onCreateView(
@@ -40,16 +71,18 @@ class WhatWePlayFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentWhatWePlayBinding.inflate(inflater, container, false)
-
+        return binding.root
+    }
+    fun updateList(){
         //RecyclerView
         val layoutManager = LinearLayoutManager(activity)
         with(binding.recGame) {
             this.layoutManager = layoutManager
             setHasFixedSize(true)
-            adapter = GameAdapter()
+            adapter = GameAdapter(games)
         }
-        return binding.root
     }
+
 
     companion object {
         /**
