@@ -17,7 +17,7 @@ import org.json.JSONObject
 
 class Login : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
-    var user: ArrayList<User> = ArrayList()
+    var user: User? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,6 +61,7 @@ class Login : AppCompatActivity() {
                     Log.d("apiresult", user.toString())
 
                     val intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("user_id",user?.id)
                     startActivity(intent)
                 } else {
                     Toast.makeText(this, "Username atau password salah.hgkjg", Toast.LENGTH_SHORT).show()

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -18,7 +18,6 @@
             android:background="#721214"
             android:gravity="center_vertical">
 
-            <!-- Game Title -->
             <TextView
                 android:id="@+id/txtGameTitle"
                 android:layout_width="0dp"
@@ -30,7 +29,6 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <!-- Proposal Status -->
             <TextView
                 android:id="@+id/txtStatus"
                 android:layout_width="wrap_content"
@@ -39,22 +37,6 @@
                 android:text="Waiting"
                 android:textColor="@android:color/white"
                 android:textSize="14sp" />
-
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
-
-    <!-- Floating Action Button -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="16dp"
-        android:contentDescription="Add Proposal"
-        android:src="@drawable/baseline_add_24"
-        app:backgroundTint="#721214"
-        app:tint="@android:color/white" />
-
 </RelativeLayout>

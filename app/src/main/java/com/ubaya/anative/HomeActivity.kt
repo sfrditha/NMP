@@ -1,5 +1,6 @@
 package com.ubaya.anative
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -10,12 +11,15 @@ import com.ubaya.anative.databinding.ActivityHomeBinding
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
     private val fragments: ArrayList<Fragment> = ArrayList()
+    var user_id = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        user_id = intent.getIntExtra("user_id",0)
 
         fragments.add(WhatWePlayFragment())
         fragments.add(WhoWeAreFragment())
@@ -38,6 +42,7 @@ class HomeActivity : AppCompatActivity() {
                 R.id.itemWhatWePlay -> binding.viewPager.currentItem = 0
                 R.id.itemWhoWeAre -> binding.viewPager.currentItem = 1
                 R.id.itemSchedule -> binding.viewPager.currentItem = 2
+                R.id.itemJoin -> joinProposal();
                 else -> false
             }
             true
@@ -45,5 +50,11 @@ class HomeActivity : AppCompatActivity() {
 
         //agar bawahnya bisa berubah
         binding.viewPager.setCurrentItem(idFragment, false)
+    }
+
+    private fun joinProposal() {
+        val intent = Intent(this, ProposalActivity::class.java)
+        intent.putExtra("user_id", user_id)
+        startActivity(intent)
     }
 }
