@@ -3,24 +3,35 @@ package com.ubaya.anative
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.google.android.material.snackbar.Snackbar
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.ubaya.anative.databinding.ActivityApplyTeamBinding
+import com.ubaya.anative.databinding.DrawerLayoutBinding
 import org.json.JSONObject
 
 class ApplyTeamActivity : AppCompatActivity() {
     private lateinit var binding: ActivityApplyTeamBinding
+//    private lateinit var binding: DrawerLayoutBinding
+//    private lateinit var drawerToggle: ActionBarDrawerToggle
+
     var games: ArrayList<Game> = ArrayList()
     var teams: ArrayList<Teams> = ArrayList()
+    var user_id :Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +39,31 @@ class ApplyTeamActivity : AppCompatActivity() {
         binding = ActivityApplyTeamBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val user_id = intent.getIntExtra("user_id", 0)
+
+//        supportActionBar?.title = "Native"
+//        supportActionBar?.setDisplayHomeAsUpEnabled(false)
+//
+//        drawerToggle = ActionBarDrawerToggle(this, binding.drawerLayout,
+//            binding.incApplyTeam.toolbar, R.string.app_name, R.string.app_name)
+//
+////        drawerToggle.isDrawerIndicatorEnabled = true
+//        binding.drawerLayout.addDrawerListener(drawerToggle)
+//        drawerToggle.syncState()
+//
+//        binding.navView.setNavigationItemSelectedListener{
+//            when(it.itemId) {
+//                R.id.itemApplyTeam ->
+//                    Snackbar.make(this,binding.root, "Apply team", Snackbar.LENGTH_SHORT).show()
+//                R.id.itemLogOut ->
+//                    Snackbar.make(this,binding.root, "Log Out", Snackbar.LENGTH_SHORT).show()
+//            }
+//            binding.drawerLayout.closeDrawer(GravityCompat.START)
+//            true
+//        }
+//
+//        setSupportActionBar(binding.incApplyTeam.toolbar)
+
+        user_id = intent.getIntExtra("user_id", 0)
 
         // Nonaktifkan spinnerTeam saat awal
         binding.spinnerTeam.isEnabled = false
@@ -39,7 +74,7 @@ class ApplyTeamActivity : AppCompatActivity() {
         var description = binding.etDescription.text.toString()
 
         binding.spinnerGame.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parentView: AdapterView<*>, view: android.view.View?, position: Int, id: Long) {
+            override fun onItemSelected(parentView: AdapterView<*>, view: View?, position: Int, id: Long) {
                 val selectedGame = games[position]
                 getTeams(user_id.toString(), selectedGame.id.toString())
 
@@ -70,6 +105,21 @@ class ApplyTeamActivity : AppCompatActivity() {
             }
         }
     }
+
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//        menuInflater.inflate(R.menu.toolbar_menu, menu)
+//        return true
+//    }
+//
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        if (drawerToggle.onOptionsItemSelected(item)) {
+//            return true
+//        }
+//        when (item.itemId) {
+//            android.R.id.home -> onBackPressed()
+//        }
+//        return super.onOptionsItemSelected(item)
+//    }
 
     fun getGames() {
         val q = Volley.newRequestQueue(this)
@@ -159,7 +209,8 @@ class ApplyTeamActivity : AppCompatActivity() {
                     Toast.makeText(this, "Join proposal sent successfully.", Toast.LENGTH_SHORT).show()
 
                     val intent = Intent(this, ProposalActivity::class.java)
-                    intent.putExtra("user_id", user_id)
+                    val id = user_id.toInt()
+                    intent.putExtra("user_id", id)
                     startActivity(intent)
 
                 } else {

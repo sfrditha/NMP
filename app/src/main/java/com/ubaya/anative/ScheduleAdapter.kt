@@ -32,7 +32,8 @@ class ScheduleAdapter(val schedules:ArrayList<Schedule>):RecyclerView.Adapter<Sc
         }
         holder.binding.cardView.setOnClickListener(){
             val intent = Intent(holder.itemView.context, ScheduleDetail::class.java)
-            intent.putExtra("schedule_index", position)
+            val id_schedule = position + 1;
+            intent.putExtra("schedule_index", id_schedule)
             holder.itemView.context.startActivity(intent)
         }
 

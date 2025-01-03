@@ -20,10 +20,4 @@
         android:title="Our Schedule"
         android:visible="true"
         app:showAsAction="always" />
-    <item
-        android:id="@+id/itemJoin"
-        android:icon="@drawable/baseline_edit_document_24"
-        android:title="Join Proposal"
-        android:visible="true"
-        app:showAsAction="always" />
 </menu>

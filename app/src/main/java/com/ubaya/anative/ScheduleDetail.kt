@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -20,32 +21,47 @@ import com.ubaya.anative.databinding.ActivityScheduleDetailBinding
 import org.json.JSONObject
 
 class ScheduleDetail : AppCompatActivity() {
-    private lateinit var binding : ActivityScheduleDetailBinding;
+    private lateinit var binding: ActivityScheduleDetailBinding
     private var scheduleDetail: ArrayList<Schedule> = ArrayList()
     var klik = 0;
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityScheduleDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val schedule_id = intent.getIntExtra("schedule_index",0)
+        val schedule_id = intent.getIntExtra("schedule_index", 0)
         fetchSchedule(schedule_id)
 
-        binding.btnNotifyMe.setOnClickListener(){
-            if(klik==0){
-                klik=1
-                Toast.makeText(this,"Notif berhasil ditambahkan",Toast.LENGTH_SHORT).show();
+        binding.btnNotifyMe.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+
+            if (klik == 0) {
+                klik = 1
+                builder.setTitle("Pemberitahuan")
+                    .setMessage("Notifikasi berhasil ditambahkan.")
+                    .setPositiveButton("OK") { dialog, _ ->
+                        dialog.dismiss()
+                    }
+            } else if (klik == 1) {
+                builder.setTitle("Pemberitahuan")
+                    .setMessage("Notifikasi sudah ditambahkan sebelumnya.")
+                    .setPositiveButton("OK") { dialog, _ ->
+                        dialog.dismiss()
+                    }
+            } else {
+                builder.setTitle("Kesalahan")
+                    .setMessage("Notifikasi tidak berhasil ditambahkan.")
+                    .setPositiveButton("OK") { dialog, _ ->
+                        dialog.dismiss()
+                    }
             }
-            else if(klik==1){
-                Toast.makeText(this,"Notif sudah ditambahkan",Toast.LENGTH_SHORT).show();
-            }
-            else{
-                Toast.makeText(this,"Notif tidak berhasil ditambahkan",Toast.LENGTH_SHORT).show();
-            }
+
+            val dialog: AlertDialog = builder.create()
+            dialog.show()
         }
     }
+
     private fun fetchSchedule(schedule_id: Int) {
         val url = "https://ubaya.xyz/native/160722042/get_scheduleDetail.php"
         val queue = Volley.newRequestQueue(this)
@@ -72,15 +88,14 @@ class ScheduleDetail : AppCompatActivity() {
         }
         queue.add(stringRequest)
     }
+
     private fun displaySchedule(schedule: ArrayList<Schedule>) {
         if (schedule.isNotEmpty()) {
             val detail = schedule[0]
 
-
             binding.title.text = detail.name
             binding.loc.text = detail.location
             binding.isi.text = detail.description
-
 
             if (detail.img_url.isNotEmpty()) {
                 val builder = Picasso.Builder(this)
@@ -88,7 +103,14 @@ class ScheduleDetail : AppCompatActivity() {
                 Picasso.get().load(detail.img_url).into(binding.imageTeam)
             }
         } else {
-            Toast.makeText(this, "Data jadwal tidak ditemukan.", Toast.LENGTH_SHORT).show()
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Pemberitahuan")
+                .setMessage("Data jadwal tidak ditemukan.")
+                .setPositiveButton("OK") { dialog, _ ->
+                    dialog.dismiss()
+                }
+            val dialog: AlertDialog = builder.create()
+            dialog.show()
         }
     }
 
