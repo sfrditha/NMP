@@ -64,7 +64,7 @@ class Login : AppCompatActivity() {
                     intent.putExtra("user_id",user?.id)
                     startActivity(intent)
                 } else {
-                    Toast.makeText(this, "Username atau password salah.hgkjg", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Username atau password salah.", Toast.LENGTH_SHORT).show()
                 }
             },
             Response.ErrorListener { error ->

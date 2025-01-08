@@ -39,6 +39,7 @@ class ScheduleFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
         val q = Volley.newRequestQueue(activity)
         val url = "https://ubaya.xyz/native/160722042/get_schedule.php"
         var stringRequest = StringRequest(

@@ -82,7 +82,6 @@ class ApplyTeamActivity : AppCompatActivity() {
                 binding.spinnerTeam.isEnabled = true
                 binding.spinnerTeam.isClickable = true
             }
-
             override fun onNothingSelected(p0: AdapterView<*>?) {
                 // Tidak melakukan apa-apa
             }

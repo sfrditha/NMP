@@ -54,6 +54,7 @@ class HomeActivity : AppCompatActivity() {
 
         // Handle fragments
         user_id = intent.getIntExtra("user_id", 0)
+
         fragments.add(WhatWePlayFragment())
         fragments.add(WhoWeAreFragment())
         fragments.add(ScheduleFragment())

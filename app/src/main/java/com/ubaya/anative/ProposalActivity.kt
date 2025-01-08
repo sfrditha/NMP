@@ -51,7 +51,7 @@ class ProposalActivity : AppCompatActivity() {
         binding.navView.setNavigationItemSelectedListener{
             when(it.itemId) {
                 R.id.itemApplyTeam ->
-                    Snackbar.make(this,binding.root, "Apply team", Snackbar.LENGTH_SHORT).show()
+                    Snackbar.make(this,binding.root, "Anda berada Apply team", Snackbar.LENGTH_SHORT).show()
                 R.id.itemLogOut ->
                     logOut()
             }
