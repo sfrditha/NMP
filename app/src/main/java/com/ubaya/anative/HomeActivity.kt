@@ -25,6 +25,7 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //drawer
         // Set up the drawer and the toolbar
         setSupportActionBar(binding.toolbarHome)
         supportActionBar?.title = "Native"
@@ -85,6 +86,7 @@ class HomeActivity : AppCompatActivity() {
         binding.viewPager.setCurrentItem(idFragment, false)
     }
 
+    //drawer
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.toolbar_menu, menu)
         return true

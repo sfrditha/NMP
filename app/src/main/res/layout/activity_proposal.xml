@@ -26,8 +26,8 @@
 
         <LinearLayout
             android:id="@+id/Layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="412dp"
+            android:layout_height="587dp"
             android:layout_marginTop="100dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
